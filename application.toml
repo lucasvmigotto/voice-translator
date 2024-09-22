@@ -3,31 +3,35 @@ debug_mode = true
 verbose_mode = true
 original_language = 'pt'
 languages = [
-    {slug = 'ru', label = 'Russian'},
-    {slug = 'tr', label = 'Turkish'},
-    {slug = 'sv', label = 'Swedish'},
-    {slug = 'de', label = 'German'},
-    {slug = 'es', label = 'Spanish'},
-    {slug = 'ja', label = 'Japanese'},
-    {slug = 'it', label = 'Italian'},
+    {slug = 'ar', label = 'Arabic'},
+    {slug = 'en', label = 'English'},
     {slug = 'fr', label = 'Français'},
-    # {slug = 'ar', label = 'Arabic'}
+    {slug = 'de', label = 'German'},
+    {slug = 'it', label = 'Italian'},
+    {slug = 'ja', label = 'Japanese'},
+    {slug = 'ru', label = 'Russian'},
+    {slug = 'es', label = 'Spanish'},
+    {slug = 'tr', label = 'Turkish'}
 ]
+
+[app.server]
+host = '0.0.0.0'
+port = 7860
 
 [app.logging]
 level = 'DEBUG'
 date_format = '%Y-%m-%d %H:%M:%S'
-format = '%(asctime)s - %(levelname)s - %(message)s"'
+format = '%(asctime)s [%(levelname)s] %(filename)s | %(funcName)s | %(lineno)d - %(message)s"'
 
 [app.elevenlabs]
-voice_id = 'CwhRBWXzGAHq8TQ4Fs17'
+voice_id = 'JhEgd2WTvHwKeFwMMZ3R'
 model_id = 'eleven_multilingual_v2'
 output_format = 'mp3_22050_32'
 save_path = '/tmp/elevenlabs'
 optimize_streaming_latency = 0
 
 [app.elevenlabs.voice_settings]
-stability = 0.5
-similarity_boost = 0.8
-style = 0.5
+stability = 1
+similarity_boost = 1
+style = 0.25
 use_speaker_boost = true
