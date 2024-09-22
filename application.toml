@@ -1,0 +1,33 @@
+[app]
+debug_mode = true
+verbose_mode = true
+original_language = 'pt'
+languages = [
+    {slug = 'ru', label = 'Russian'},
+    {slug = 'tr', label = 'Turkish'},
+    {slug = 'sv', label = 'Swedish'},
+    {slug = 'de', label = 'German'},
+    {slug = 'es', label = 'Spanish'},
+    {slug = 'ja', label = 'Japanese'},
+    {slug = 'it', label = 'Italian'},
+    {slug = 'fr', label = 'Français'},
+    # {slug = 'ar', label = 'Arabic'}
+]
+
+[app.logging]
+level = 'DEBUG'
+date_format = '%Y-%m-%d %H:%M:%S'
+format = '%(asctime)s - %(levelname)s - %(message)s"'
+
+[app.elevenlabs]
+voice_id = 'CwhRBWXzGAHq8TQ4Fs17'
+model_id = 'eleven_multilingual_v2'
+output_format = 'mp3_22050_32'
+save_path = '/tmp/elevenlabs'
+optimize_streaming_latency = 0
+
+[app.elevenlabs.voice_settings]
+stability = 0.5
+similarity_boost = 0.8
+style = 0.5
+use_speaker_boost = true
