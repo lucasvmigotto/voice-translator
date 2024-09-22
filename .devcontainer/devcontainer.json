@@ -16,7 +16,6 @@
             "type": "bind"
         }
     ],
-    "remoteUser": "vscode",
     "customizations": {
         "vscode": {
             "extensions": [

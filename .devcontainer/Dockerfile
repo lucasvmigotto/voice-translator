@@ -7,8 +7,6 @@ ARG POETRY_VERSION="1.8.3"
 
 USER ${USERNAME}
 
-ENV PYTHONPATH=/app/src
-
 WORKDIR /app
 
 RUN pipx install poetry==${POETRY_VERSION}
@@ -18,3 +16,5 @@ RUN pipx inject poetry poetry-plugin-export
 COPY ./pyproject.toml ./poetry.lock* /app/
 
 RUN poetry install --with dev
+
+ENV PYTHONPATH=/app/src
